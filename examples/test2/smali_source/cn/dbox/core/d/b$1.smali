@@ -1,0 +1,932 @@
+.class Lcn/dbox/core/d/b$1;
+.super Landroid/os/Handler;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcn/dbox/core/d/b;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x0
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic a:Lcn/dbox/core/d/b;
+
+
+# direct methods
+.method constructor <init>(Lcn/dbox/core/d/b;)V
+    .registers 2
+
+    .prologue
+    .line 292
+    iput-object p1, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public handleMessage(Landroid/os/Message;)V
+    .registers 10
+    .param p1, "msg"    # Landroid/os/Message;
+
+    .prologue
+    const/4 v1, 0x0
+
+    const/16 v7, 0x64
+
+    const/4 v3, 0x0
+
+    .line 295
+    invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
+
+    .line 297
+    iget v0, p1, Landroid/os/Message;->what:I
+
+    iget-object v2, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v2}, Lcn/dbox/core/d/b;->a(Lcn/dbox/core/d/b;)I
+
+    move-result v2
+
+    sub-int/2addr v0, v2
+
+    const/4 v2, 0x5
+
+    if-ge v0, v2, :cond_18
+
+    iget v0, p1, Landroid/os/Message;->what:I
+
+    if-eq v0, v7, :cond_18
+
+    .line 405
+    :cond_17
+    :goto_17
+    return-void
+
+    .line 300
+    :cond_18
+    iget-object v0, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    iget v2, p1, Landroid/os/Message;->what:I
+
+    invoke-static {v0, v2}, Lcn/dbox/core/d/b;->a(Lcn/dbox/core/d/b;I)I
+
+    .line 301
+    iget-object v0, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    iget v2, p1, Landroid/os/Message;->what:I
+
+    invoke-static {v0, v2}, Lcn/dbox/core/d/b;->b(Lcn/dbox/core/d/b;I)I
+
+    .line 302
+    invoke-static {}, Lcn/dbox/core/d/b;->c()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_8a
+
+    .line 304
+    iget-object v0, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v0}, Lcn/dbox/core/d/b;->e(Lcn/dbox/core/d/b;)Landroid/app/Notification;
+
+    move-result-object v0
+
+    iget-object v2, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v2}, Lcn/dbox/core/d/b;->b(Lcn/dbox/core/d/b;)Landroid/content/Context;
+
+    move-result-object v2
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v5, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v5}, Lcn/dbox/core/d/b;->c(Lcn/dbox/core/d/b;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v5, "\u6b63\u5728\u4e0b\u8f7d"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "\u5df2\u4e0b\u8f7d"
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    iget v6, p1, Landroid/os/Message;->what:I
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    const-string v6, "%"
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    iget-object v6, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v6}, Lcn/dbox/core/d/b;->d(Lcn/dbox/core/d/b;)Landroid/app/PendingIntent;
+
+    move-result-object v6
+
+    invoke-virtual {v0, v2, v4, v5, v6}, Landroid/app/Notification;->setLatestEventInfo(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)V
+
+    .line 305
+    iget-object v0, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v0}, Lcn/dbox/core/d/b;->g(Lcn/dbox/core/d/b;)Landroid/app/NotificationManager;
+
+    move-result-object v0
+
+    iget-object v2, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v2}, Lcn/dbox/core/d/b;->f(Lcn/dbox/core/d/b;)I
+
+    move-result v2
+
+    iget-object v4, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v4}, Lcn/dbox/core/d/b;->e(Lcn/dbox/core/d/b;)Landroid/app/Notification;
+
+    move-result-object v4
+
+    invoke-virtual {v0, v2, v4}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
+
+    .line 308
+    :cond_8a
+    iget-object v0, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v0}, Lcn/dbox/core/d/b;->h(Lcn/dbox/core/d/b;)I
+
+    move-result v0
+
+    if-ne v0, v7, :cond_17
+
+    .line 309
+    invoke-static {}, Lcn/dbox/core/d/b;->d()Lcn/dbox/core/h/d;
+
+    move-result-object v0
+
+    const-class v2, Lcn/dbox/core/d/b;
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v5, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v5}, Lcn/dbox/core/d/b;->c(Lcn/dbox/core/d/b;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v5, " download success"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v0, v2, v4}, Lcn/dbox/core/h/d;->a(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 310
+    new-instance v5, Ljava/io/File;
+
+    iget-object v0, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v0}, Lcn/dbox/core/d/b;->i(Lcn/dbox/core/d/b;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v5, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    .line 311
+    iget-object v0, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v0}, Lcn/dbox/core/d/b;->i(Lcn/dbox/core/d/b;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v2, ".temp"
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_121
+
+    .line 313
+    iget-object v0, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    iget-object v2, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v2}, Lcn/dbox/core/d/b;->i(Lcn/dbox/core/d/b;)Ljava/lang/String;
+
+    move-result-object v2
+
+    iget-object v4, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v4}, Lcn/dbox/core/d/b;->i(Lcn/dbox/core/d/b;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    const-string v6, ".temp"
+
+    invoke-virtual {v6}, Ljava/lang/String;->length()I
+
+    move-result v6
+
+    sub-int/2addr v4, v6
+
+    invoke-virtual {v2, v3, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Lcn/dbox/core/d/b;->a(Lcn/dbox/core/d/b;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 315
+    new-instance v0, Ljava/io/File;
+
+    iget-object v2, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v2}, Lcn/dbox/core/d/b;->i(Lcn/dbox/core/d/b;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v0, v2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    .line 316
+    invoke-static {}, Lcn/dbox/core/d/b;->d()Lcn/dbox/core/h/d;
+
+    move-result-object v2
+
+    const-class v4, Lcn/dbox/core/d/b;
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v7, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v7}, Lcn/dbox/core/d/b;->c(Lcn/dbox/core/d/b;)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    const-string v7, "FileName change to "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v2, v4, v6}, Lcn/dbox/core/h/d;->a(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 318
+    invoke-virtual {v5, v0}, Ljava/io/File;->renameTo(Ljava/io/File;)Z
+
+    .line 322
+    :cond_121
+    iget-object v0, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v0}, Lcn/dbox/core/d/b;->j(Lcn/dbox/core/d/b;)I
+
+    move-result v0
+
+    if-nez v0, :cond_348
+
+    .line 323
+    invoke-virtual {v5}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;)Landroid/graphics/Bitmap;
+
+    move-result-object v6
+
+    move v2, v3
+
+    move-object v0, v1
+
+    .line 327
+    :goto_133
+    const/4 v4, 0x2
+
+    if-ge v2, v4, :cond_153
+
+    if-nez v0, :cond_153
+
+    .line 328
+    iget-object v0, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v0}, Lcn/dbox/core/d/b;->b(Lcn/dbox/core/d/b;)Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    invoke-virtual {v5}, Ljava/io/File;->getName()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v5}, Ljava/io/File;->getName()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v0, v6, v4, v7}, Landroid/provider/MediaStore$Images$Media;->insertImage(Landroid/content/ContentResolver;Landroid/graphics/Bitmap;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 330
+    add-int/lit8 v0, v2, 0x1
+
+    move v2, v0
+
+    move-object v0, v4
+
+    goto :goto_133
+
+    .line 333
+    :cond_153
+    invoke-static {}, Lcn/dbox/core/d/b;->d()Lcn/dbox/core/h/d;
+
+    move-result-object v2
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "fetch picture ablum path "
+
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v2, v4}, Lcn/dbox/core/h/d;->b(Ljava/lang/String;)V
+
+    .line 334
+    if-nez v0, :cond_199
+
+    .line 335
+    invoke-static {}, Lcn/dbox/core/d/b;->d()Lcn/dbox/core/h/d;
+
+    move-result-object v2
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "insert "
+
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v5}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v5, " failed, change the resType to other"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v2, v4}, Lcn/dbox/core/h/d;->b(Ljava/lang/String;)V
+
+    .line 337
+    iget-object v2, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    const/4 v4, 0x1
+
+    invoke-static {v2, v4}, Lcn/dbox/core/d/b;->c(Lcn/dbox/core/d/b;I)I
+
+    .line 342
+    :cond_199
+    :goto_199
+    sget-object v2, Lcn/dbox/core/d/b;->a:Ljava/util/Hashtable;
+
+    iget-object v4, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v4}, Lcn/dbox/core/d/b;->k(Lcn/dbox/core/d/b;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v2, v4}, Ljava/util/Hashtable;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 343
+    iget-object v2, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v2}, Lcn/dbox/core/d/b;->l(Lcn/dbox/core/d/b;)Lcn/dbox/core/d/c;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_1bb
+
+    .line 344
+    iget-object v2, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v2}, Lcn/dbox/core/d/b;->l(Lcn/dbox/core/d/b;)Lcn/dbox/core/d/c;
+
+    move-result-object v2
+
+    iget-object v4, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v4}, Lcn/dbox/core/d/b;->i(Lcn/dbox/core/d/b;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-interface {v2, v4}, Lcn/dbox/core/d/c;->a(Ljava/lang/String;)V
+
+    .line 346
+    :cond_1bb
+    iget-object v2, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v2, v3}, Lcn/dbox/core/d/b;->b(Lcn/dbox/core/d/b;I)I
+
+    .line 347
+    invoke-static {}, Lcn/dbox/core/d/b;->c()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_17
+
+    .line 348
+    iget-object v2, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v2}, Lcn/dbox/core/d/b;->e(Lcn/dbox/core/d/b;)Landroid/app/Notification;
+
+    move-result-object v2
+
+    const v3, 0x1080082
+
+    iput v3, v2, Landroid/app/Notification;->icon:I
+
+    .line 349
+    iget-object v2, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v2}, Lcn/dbox/core/d/b;->e(Lcn/dbox/core/d/b;)Landroid/app/Notification;
+
+    move-result-object v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v4, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v4}, Lcn/dbox/core/d/b;->c(Lcn/dbox/core/d/b;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, "\u4e0b\u8f7d\u5b8c\u6bd5"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v2, Landroid/app/Notification;->tickerText:Ljava/lang/CharSequence;
+
+    .line 350
+    iget-object v2, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v2}, Lcn/dbox/core/d/b;->e(Lcn/dbox/core/d/b;)Landroid/app/Notification;
+
+    move-result-object v2
+
+    const/16 v3, 0x10
+
+    iput v3, v2, Landroid/app/Notification;->flags:I
+
+    .line 352
+    iget-object v2, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v2}, Lcn/dbox/core/d/b;->m(Lcn/dbox/core/d/b;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2b3
+
+    .line 353
+    iget-object v2, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v2}, Lcn/dbox/core/d/b;->j(Lcn/dbox/core/d/b;)I
+
+    move-result v2
+
+    if-nez v2, :cond_2ac
+
+    .line 354
+    iget-object v2, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v2, v0}, Lcn/dbox/core/d/b;->b(Lcn/dbox/core/d/b;Ljava/lang/String;)Landroid/content/Intent;
+
+    move-result-object v2
+
+    .line 363
+    :goto_212
+    iget-object v3, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    iget-object v4, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v4}, Lcn/dbox/core/d/b;->b(Lcn/dbox/core/d/b;)Landroid/content/Context;
+
+    move-result-object v4
+
+    iget-object v5, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v5}, Lcn/dbox/core/d/b;->f(Lcn/dbox/core/d/b;)I
+
+    move-result v5
+
+    const/high16 v6, 0x8000000
+
+    invoke-static {v4, v5, v2, v6}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+
+    move-result-object v2
+
+    invoke-static {v3, v2}, Lcn/dbox/core/d/b;->a(Lcn/dbox/core/d/b;Landroid/app/PendingIntent;)Landroid/app/PendingIntent;
+
+    .line 365
+    iget-object v2, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v2}, Lcn/dbox/core/d/b;->e(Lcn/dbox/core/d/b;)Landroid/app/Notification;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v3}, Lcn/dbox/core/d/b;->b(Lcn/dbox/core/d/b;)Landroid/content/Context;
+
+    move-result-object v3
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v5, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v5}, Lcn/dbox/core/d/b;->c(Lcn/dbox/core/d/b;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v5, "\u4e0b\u8f7d\u5b8c\u6bd5"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    const-string v5, ""
+
+    iget-object v6, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v6}, Lcn/dbox/core/d/b;->d(Lcn/dbox/core/d/b;)Landroid/app/PendingIntent;
+
+    move-result-object v6
+
+    invoke-virtual {v2, v3, v4, v5, v6}, Landroid/app/Notification;->setLatestEventInfo(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)V
+
+    .line 366
+    iget-object v2, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v2}, Lcn/dbox/core/d/b;->g(Lcn/dbox/core/d/b;)Landroid/app/NotificationManager;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v3}, Lcn/dbox/core/d/b;->f(Lcn/dbox/core/d/b;)I
+
+    move-result v3
+
+    iget-object v4, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v4}, Lcn/dbox/core/d/b;->e(Lcn/dbox/core/d/b;)Landroid/app/Notification;
+
+    move-result-object v4
+
+    invoke-virtual {v2, v3, v4}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
+
+    .line 367
+    iget-object v2, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v2}, Lcn/dbox/core/d/b;->n(Lcn/dbox/core/d/b;)Ljava/lang/String;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_2bf
+
+    .line 369
+    iget-object v2, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v2}, Lcn/dbox/core/d/b;->n(Lcn/dbox/core/d/b;)Ljava/lang/String;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v3}, Lcn/dbox/core/d/b;->i(Lcn/dbox/core/d/b;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Lcn/dbox/core/h/f;->d(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_2bf
+
+    .line 371
+    invoke-static {}, Lcn/dbox/core/d/b;->d()Lcn/dbox/core/h/d;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v1}, Lcn/dbox/core/d/b;->b(Lcn/dbox/core/d/b;)Landroid/content/Context;
+
+    move-result-object v1
+
+    const-string v2, "md5 authorized failed"
+
+    invoke-virtual {v0, v1, v2}, Lcn/dbox/core/h/d;->b(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 372
+    iget-object v0, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v0}, Lcn/dbox/core/d/b;->g(Lcn/dbox/core/d/b;)Landroid/app/NotificationManager;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v1}, Lcn/dbox/core/d/b;->f(Lcn/dbox/core/d/b;)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/app/NotificationManager;->cancel(I)V
+
+    goto/16 :goto_17
+
+    .line 356
+    :cond_2ac
+    new-instance v2, Landroid/content/Intent;
+
+    invoke-direct {v2}, Landroid/content/Intent;-><init>()V
+
+    goto/16 :goto_212
+
+    .line 360
+    :cond_2b3
+    iget-object v2, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v2}, Lcn/dbox/core/d/b;->i(Lcn/dbox/core/d/b;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcn/dbox/core/d/b;->a(Ljava/lang/String;)Landroid/content/Intent;
+
+    move-result-object v2
+
+    goto/16 :goto_212
+
+    .line 377
+    :cond_2bf
+    iget-object v2, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v2}, Lcn/dbox/core/d/b;->m(Lcn/dbox/core/d/b;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_33d
+
+    .line 378
+    iget-object v2, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v2}, Lcn/dbox/core/d/b;->j(Lcn/dbox/core/d/b;)I
+
+    move-result v2
+
+    if-nez v2, :cond_2e7
+
+    .line 379
+    iget-object v1, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v1, v0}, Lcn/dbox/core/d/b;->b(Lcn/dbox/core/d/b;Ljava/lang/String;)Landroid/content/Intent;
+
+    move-result-object v1
+
+    .line 397
+    :goto_2d5
+    if-eqz v1, :cond_17
+
+    .line 398
+    const/high16 v0, 0x10000000
+
+    invoke-virtual {v1, v0}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+
+    .line 399
+    iget-object v0, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v0}, Lcn/dbox/core/d/b;->b(Lcn/dbox/core/d/b;)Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+
+    goto/16 :goto_17
+
+    .line 382
+    :cond_2e7
+    new-instance v0, Landroid/app/AlertDialog$Builder;
+
+    iget-object v2, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v2}, Lcn/dbox/core/d/b;->o(Lcn/dbox/core/d/b;)Landroid/content/Context;
+
+    move-result-object v2
+
+    invoke-direct {v0, v2}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+
+    const-string v2, "\u786e\u8ba4"
+
+    invoke-virtual {v0, v2}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v0
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v3, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v3}, Lcn/dbox/core/d/b;->c(Lcn/dbox/core/d/b;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, "\u5df2\u88ab\u4e0b\u8f7d\u5230\u8def\u5f84:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v3}, Lcn/dbox/core/d/b;->i(Lcn/dbox/core/d/b;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v0
+
+    const-string v2, "\u786e\u5b9a"
+
+    new-instance v3, Lcn/dbox/core/d/b$1$1;
+
+    invoke-direct {v3, p0}, Lcn/dbox/core/d/b$1$1;-><init>(Lcn/dbox/core/d/b$1;)V
+
+    invoke-virtual {v0, v2, v3}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
+
+    .line 390
+    iget-object v0, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v0}, Lcn/dbox/core/d/b;->g(Lcn/dbox/core/d/b;)Landroid/app/NotificationManager;
+
+    move-result-object v0
+
+    iget-object v2, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v2}, Lcn/dbox/core/d/b;->f(Lcn/dbox/core/d/b;)I
+
+    move-result v2
+
+    invoke-virtual {v0, v2}, Landroid/app/NotificationManager;->cancel(I)V
+
+    goto :goto_2d5
+
+    .line 395
+    :cond_33d
+    iget-object v0, p0, Lcn/dbox/core/d/b$1;->a:Lcn/dbox/core/d/b;
+
+    invoke-static {v0}, Lcn/dbox/core/d/b;->i(Lcn/dbox/core/d/b;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcn/dbox/core/d/b;->a(Ljava/lang/String;)Landroid/content/Intent;
+
+    move-result-object v1
+
+    goto :goto_2d5
+
+    :cond_348
+    move-object v0, v1
+
+    goto/16 :goto_199
+.end method

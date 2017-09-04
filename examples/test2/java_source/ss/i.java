@@ -1,0 +1,3 @@
+package ss;
+
+class i {}
